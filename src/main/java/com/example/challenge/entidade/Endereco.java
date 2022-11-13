@@ -10,6 +10,7 @@ import javax.persistence.*;
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name= "id_endereco")
     private Long id;
 
     @Column(name = "logradouro")
@@ -18,9 +19,16 @@ public class Endereco {
     @Column(name = "numero")
     private Long numero;
 
+    @Column(name = "cep")
+    private String cep;
+
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "id_agencia")
+    private Agencia agencia;
 
     @ManyToOne
     @JoinColumn(name = "id_cidade")

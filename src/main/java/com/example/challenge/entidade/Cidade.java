@@ -10,8 +10,9 @@ import javax.persistence.*;
 public class Cidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_cidade", nullable = false)
     private Long id;
 
+    @Column(name = "nome_cidade")
     private String nome;
 }

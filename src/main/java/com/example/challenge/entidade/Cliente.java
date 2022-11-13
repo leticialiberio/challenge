@@ -10,13 +10,12 @@ import java.util.List;
 @Data
 public class Cliente {
     @Id
+    @Column(name = "id_cliente")
     private String cpf;
+
     @Column(name = "nome_cliente")
     private String nome;
 
-    @ManyToMany
-    @JoinTable(name = "cliente_endereco", joinColumns =
-    @JoinColumn(name = "id_cliente", referencedColumnName = "cpf"),
-            inverseJoinColumns = @JoinColumn(name = "id_endereco", referencedColumnName = "id"))
+    @OneToMany(mappedBy = "clientes")
     private List<Endereco> enderecoClienteList;
 }

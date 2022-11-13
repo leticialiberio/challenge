@@ -15,9 +15,6 @@ public class Agencia {
     @Column(name = "nome_agencia")
     private String nomeAgencia;
 
-    @ManyToMany
-    @JoinTable(name = "agencia_endereco", joinColumns =
-    @JoinColumn(name = "id_agencia", referencedColumnName = "numeroAgencia"),
-            inverseJoinColumns = @JoinColumn(name = "id_endereco", referencedColumnName = "id"))
+    @OneToOne(mappedBy = "endereco")
     private Endereco enderecoAgencia;
 }

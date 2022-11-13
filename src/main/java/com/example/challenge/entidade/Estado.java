@@ -13,5 +13,6 @@ public class Estado {
     @Column(name= "id", nullable = false)
     private Long id;
 
+    @Column(name = "nome_estado")
     private String nome;
 }
