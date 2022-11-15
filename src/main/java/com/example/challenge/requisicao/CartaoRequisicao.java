@@ -1,11 +1,11 @@
 package com.example.challenge.requisicao;
 
-import com.example.challenge.entidade.Cliente;
 import lombok.Data;
 
 @Data
-public class RequisicaoCartaoPatch {
+public class CartaoRequisicao {
+    private String cpf;
     private String modalidade;
-    private Cliente cliente;
     private EnderecoRequisicao enderecoRequisicao;
 }
+
