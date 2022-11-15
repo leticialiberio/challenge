@@ -11,8 +11,8 @@ public class Cidade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cidade", nullable = false)
-    private Long id;
+    private Long idCidade;
 
     @Column(name = "nome_cidade")
-    private String nome;
+    private String nomeCidade;
 }
