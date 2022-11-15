@@ -24,7 +24,7 @@ public class CartaoController {
     // http://localhost:8080/cartao/<numeroCartao>
     @PatchMapping(path = "/{numeroCartao}")
     public CartaoResposta alterarCartao(@RequestBody EnderecoRequisicao enderecoRequisicao,
-                                        @PathVariable("numeroCartao") String idNumeroCartao) {
+                                        @PathVariable("numeroCartao") String identificadorCartao) {
         return null;
     }
 
@@ -36,7 +36,7 @@ public class CartaoController {
 
     // http://localhost:8080/cartao/<numeroCartao>
     @DeleteMapping(path = "/{numeroCartao}")
-    public CartaoResposta deletarCartao(@PathVariable("numeroCartao") String numeroCartao) {
+    public CartaoResposta deletarCartao(@PathVariable("numeroCartao") String identificadorCartao) {
         return null;
     }
 }
