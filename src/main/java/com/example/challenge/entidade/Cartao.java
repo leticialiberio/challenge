@@ -3,7 +3,7 @@ package com.example.challenge.entidade;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = "cartao")
@@ -11,17 +11,17 @@ import java.util.List;
 public class Cartao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cartao")
+    @Column(name = "id_cartao", nullable = false)
     private Long idNumeroCartao;
 
     @Column(name = "modalidade")
     private String modalidade;
 
-    @OneToMany(mappedBy = "cartao")
-    private List<Endereco> enderecoList;
+    @ManyToOne
+    @JoinColumn(name = "id_endereco", nullable = false)
+    private Endereco enderecoList;
 
-    @OneToOne
-    @JoinTable(name = "cliente", joinColumns =
-    @JoinColumn(name = "id_cliente", referencedColumnName = "cpf"))
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
 }

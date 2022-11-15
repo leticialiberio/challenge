@@ -25,6 +25,6 @@ public class Cliente {
     private List<Conta> contaList;
 
     @OneToMany
-    @JoinColumn(name = "id_cartao", nullable = false)
+    @JoinColumn(name = "cartao", nullable = false)
     private List<Cartao> cartaoList;
 }

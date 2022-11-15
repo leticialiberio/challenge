@@ -3,21 +3,27 @@ package com.example.challenge.entidade;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 @Table(name = "reemissao")
 @Data
 public class Reemissao {
+    @Id
+    @Column(name = "id_reemissao",nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idReemissao;
+
     @ManyToOne
-    @JoinTable(name = "cartao", joinColumns =
-    @JoinColumn(name = "id_cartao", referencedColumnName = "idNumeroCartao"))
+    @JoinTable(name = "cliente")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinTable(name = "cartao")
     private Cartao cartao;
 
-    @ManyToMany
-    @JoinTable(name = "cliente_endereco", joinColumns =
-    @JoinColumn(name = "id_cliente", referencedColumnName = "cpf"),
-            inverseJoinColumns = @JoinColumn(name = "id_endereco", referencedColumnName = "id"))
-    private List<Endereco> enderecoClienteList;
+    @ManyToOne
+    @JoinTable(name = "endereco_cliente")
+    private Endereco enderecoClienteList;
 
 }

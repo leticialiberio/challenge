@@ -16,6 +16,7 @@ public class Agencia {
     @Column(name = "nome_agencia")
     private String nomeAgencia;
 
-    @OneToOne(mappedBy = "id_endereco")
+    @ManyToOne
+    @JoinColumn(name = "id_endereco")
     private Endereco enderecoAgencia;
 }
