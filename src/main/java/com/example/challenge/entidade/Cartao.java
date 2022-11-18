@@ -19,7 +19,7 @@ public class Cartao {
 
     @ManyToOne
     @JoinColumn(name = "id_endereco", nullable = false)
-    private Endereco enderecoList;
+    private Endereco endereco;
 
     @ManyToOne
     @JoinColumn(name = "id_cliente", nullable = false)

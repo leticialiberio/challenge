@@ -3,8 +3,6 @@ package com.example.challenge.requisicao;
 import lombok.Data;
 
 @Data
-public class EnderecoRequisicao {
-    private Integer numero;
-    private String logradouro;
+public class EnderecoRequisicao extends EnderecoRequisicaoPatch{
     private String cep;
 }

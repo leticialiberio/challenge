@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
 @Slf4j
-public class ConsultaCEPCliente {
+public class consultaCEP {
     public EnderecoResposta getCep(String cep) {
         WebClient webClient = WebClient.create();
         return
