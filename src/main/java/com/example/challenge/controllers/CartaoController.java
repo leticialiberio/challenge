@@ -32,7 +32,7 @@ public class CartaoController {
     // http://localhost:8080/cartao/<numeroCartao>
     @PatchMapping(path = "/{numeroCartao}")
     public CartaoResposta alterarCartao(@RequestBody EnderecoRequisicao enderecoRequisicao,
-                                        @PathVariable("numeroCartao") String identificadorCartao) {
+                                        @PathVariable("numeroCartao") Long identificadorCartao) {
         return new CartaoResposta();
     }
 
@@ -43,13 +43,13 @@ public class CartaoController {
     }
 
     @GetMapping(path= "/{numeroCartao}")
-    public CartaoResposta consultarCliente(@PathVariable("identificador") String identificadorCartao){
+    public CartaoResposta consultarCliente(@PathVariable("identificador") Long identificadorCartao){
         return consultarCartaoServico.executar(identificadorCartao);
     }
 
     // http://localhost:8080/cartao/<numeroCartao>
     @DeleteMapping(path = "/{numeroCartao}")
-    public CartaoResposta deletarCartao(@PathVariable("numeroCartao") String identificadorCartao) {
+    public CartaoResposta deletarCartao(@PathVariable("numeroCartao") Long identificadorCartao) {
         return removerCartaoServico.executar(identificadorCartao);
     }
 }

@@ -19,10 +19,9 @@ public class ConsultarCartaoServico {
     @Autowired
     private consultaCEP consultaCEP;
 
-    public CartaoResposta executar(String identificador){
+    public CartaoResposta executar(Long identificador){
         Cartao cartao = pesquisarCartaoServico.executar(identificador);
-        Endereco endereco = enderecoRepositorio.findByCartao(cartao);
-        cartao.setEndereco(endereco);
+
         EnderecoResposta enderecoResposta = consultaCEP.getCep(cartao.getEndereco().getCep());
 
         final CartaoResposta cartaoResposta = ConverterCartaoParaRespostaCartao.converte(cartao);

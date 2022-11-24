@@ -12,7 +12,7 @@ public class PesquisarCartaoServico {
     @Autowired
     private CartaoRepositorio cartaoRepositorio;
 
-    public Cartao executar(String identificador){
+    public Cartao executar(Long identificador){
         return cartaoRepositorio.findIdentificador(identificador).orElseThrow(SemConteudoExcecao::new);
     }
 }

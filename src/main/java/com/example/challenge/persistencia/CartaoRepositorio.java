@@ -9,13 +9,10 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface CartaoRepositorio extends JpaRepository<Cartao, String> {
+public interface CartaoRepositorio extends JpaRepository<Cartao, Long> {
 
     @Query("Select c FROM Cartao c inner join c.endereco Where c.id_cartao = :identificador")
-    Optional<Cartao> findIdentificador(@Param("identificador") String identificador);
+    Optional<Cartao> findIdentificador(@Param("identificador") Long identificador);
 
-    Optional<Cartao> findByIdentificador(String identificador);
 
-    @Modifying
-    Long deleteByIdentificador(String identificador);
 }

@@ -17,7 +17,7 @@ public class RemoverCartaoServico {
     private final PesquisarCartaoServico pesquisarCartaoServico;
 
     @Transactional
-    public CartaoResposta executar(String identificador) {
+    public CartaoResposta executar(Long identificador) {
         final Cartao cartao = pesquisarCartaoServico.executar(identificador);
 
         cartaoRepositorio.delete(cartao);

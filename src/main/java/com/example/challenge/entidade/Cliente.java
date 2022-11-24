@@ -1,5 +1,6 @@
 package com.example.challenge.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,10 +19,12 @@ public class Cliente {
 
     @OneToMany
     @JoinColumn(name = "endereco_cliente", nullable = false)
+    @JsonIgnore
     private List<Endereco> enderecoClienteList;
 
     @ManyToMany
     @JoinColumn(name = "id_conta", nullable = false)
+    @JsonIgnore
     private List<Conta> contaList;
 
     @OneToMany

@@ -19,7 +19,7 @@ public class AlterarCartaoServico {
     private final CartaoRepositorio cartaoRepositorio;
     private final PesquisarCartaoServico pesquisarCartaoServico;
 
-    public CartaoResposta executar(CartaoRequisicao cartaoRequisicao, String identificador){
+    public CartaoResposta executar(CartaoRequisicao cartaoRequisicao, Long identificador){
        Cartao cartao = pesquisarCartaoServico.executar(identificador);
        if (Objects.nonNull(cartao.getIdNumeroCartao())){
            cartao.setIdNumeroCartao(cartaoRequisicao.getIdNumeroCartao());
