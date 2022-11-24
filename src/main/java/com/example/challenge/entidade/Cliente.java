@@ -25,7 +25,6 @@ public class Cliente {
     @ManyToMany
     @JoinColumn(name = "id_conta", nullable = false)
     @JsonIgnore
-
     private List<Conta> contaList;
 
     @OneToMany
