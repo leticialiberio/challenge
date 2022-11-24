@@ -24,7 +24,6 @@ public class ConsultarCartaoServico {
 
         EnderecoResposta enderecoResposta = consultaCEP.getCep(cartao.getEndereco().getCep());
 
-
         final CartaoResposta cartaoResposta = ConverterCartaoParaRespostaCartao.converte(cartao);
         return cartaoResposta;
     }
