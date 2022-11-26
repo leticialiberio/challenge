@@ -6,13 +6,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
-
+@Repository
 public interface CartaoRepositorio extends JpaRepository<Cartao, Long> {
 
-    @Query("Select c FROM Cartao c inner join c.endereco Where c.id_cartao = :identificador")
-    Optional<Cartao> findIdentificador(@Param("identificador") Long identificador);
+    @Query("Select c FROM Cartao c inner join c.endereco Where c.id_cartao = :idNumeroCartao")
+    Optional<Cartao> findIdentificador(@Param("identificador") Long idNumeroCartao);
 
 
 }

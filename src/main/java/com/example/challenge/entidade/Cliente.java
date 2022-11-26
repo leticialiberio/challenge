@@ -28,6 +28,7 @@ public class Cliente {
     private List<Conta> contaList;
 
     @OneToMany
+    @JsonIgnore
     @JoinColumn(name = "cartao", nullable = false)
     private List<Cartao> cartaoList;
 }

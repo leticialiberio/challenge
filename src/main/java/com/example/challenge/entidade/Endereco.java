@@ -22,6 +22,9 @@ public class Endereco {
     @Column(name = "complemento")
     private String complemento;
 
+    @Column(name = "bairro", nullable = false)
+    private String bairro;
+
     @Column(name = "cep", nullable = false)
     private String cep;
 
@@ -32,5 +35,4 @@ public class Endereco {
     @ManyToOne
     @JoinColumn(name = "id_estado", nullable = false)
     private Estado estado;
-
 }
