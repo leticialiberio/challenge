@@ -52,6 +52,7 @@ public class IncluirCartaoServico {
         endereco.setCidade(cartaoRequisicao.getEnderecoRequisicao().getCidade());
         endereco.setEstado(cartaoRequisicao.getEnderecoRequisicao().getEstado());
         endereco.setId(cartaoRequisicao.getEnderecoRequisicao().getId());
+        enderecoRepositorio.save(endereco);
 
         cartaoResposta.setCliente(cartaoRequisicao.getCliente());
         cartaoResposta.setIdNumeroCartao(cartaoRequisicao.getIdNumeroCartao());
@@ -61,7 +62,7 @@ public class IncluirCartaoServico {
         enderecoRequisicao.setNumero(cartaoRequisicao.getEnderecoRequisicao().getNumero());
         enderecoRequisicao.setCep(cartaoRequisicao.getEnderecoRequisicao().getCep());
         enderecoRequisicao.setId(cartaoRequisicao.getEnderecoRequisicao().getId());
-        enderecoRepositorio.save(cartao);
+        enderecoRepositorio.save(endereco);
 
         return cartaoResposta;
     }
