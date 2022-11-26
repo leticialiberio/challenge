@@ -1,5 +1,6 @@
 package com.example.challenge.entidade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,9 +21,11 @@ public class Conta {
 
     @ManyToOne
     @JoinTable(name = "cliente")
+    @JsonIgnore
     private Cliente cliente;
 
     @ManyToMany
     @JoinTable(name = "cartao")
+    @JsonIgnore
     private List<Cartao> cartaoList;
 }
